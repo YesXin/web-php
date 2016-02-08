@@ -19,7 +19,9 @@ RUN { \
 	} > /usr/local/etc/php/conf.d/opcache-recommended.ini
 
 VOLUME /var/www/html
-COPY . /var/www/html
-RUN chown -R www-data:www-data /var/www/html && chmod -R 775 /var/www/html
 
+COPY setup.sh /setup.sh
+
+# grr, ENTRYPOINT resets CMD now
+ENTRYPOINT ["/setup.sh"]
 CMD ["apache2-foreground"]
