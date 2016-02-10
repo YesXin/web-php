@@ -2,5 +2,4 @@
 set -e
 
 chown -R www-data:www-data /var/www/html
-
-exec "$@"
+chmod -R 755 /var/www/html
