@@ -23,5 +23,5 @@ VOLUME /var/www/html
 COPY setup.sh /setup.sh
 
 # grr, ENTRYPOINT resets CMD now
-ENTRYPOINT ["/setup.sh"]
+# ENTRYPOINT ["/setup.sh"]
 CMD ["apache2-foreground"]
