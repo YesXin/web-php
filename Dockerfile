@@ -20,7 +20,7 @@ RUN { \
 
 VOLUME /var/www/html
 
-COPY setup.sh /entrypoint.sh
+COPY docker-entrypoint.sh /entrypoint.sh
 # grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
