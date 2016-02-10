@@ -21,7 +21,7 @@ RUN { \
 VOLUME /var/www/html
 
 COPY setup.sh /setup.sh
-
+RUN chmod 777 /setup.sh
 # grr, ENTRYPOINT resets CMD now
-# ENTRYPOINT ["/setup.sh"]
+ENTRYPOINT ["/setup.sh"]
 CMD ["apache2-foreground"]
